@@ -1,0 +1,22 @@
+{% include "./header.html" %}
+{% include "./title.html" %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4" id="song_list">
+            {% block songList %}
+            <h1>The Cure Songs List</h1>
+            <table>
+                <tr><th>Songs</th></tr>
+                {% for song in master_songs %}
+                <tr><td><a href="/song/{{song.pk}}" >{{song.name}}</a></td></tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endblock %}
+        
+        <div class="col-sm-8" class="content">
+            {% block content %}Didn't render content{% endblock %}
+        </div>
+        {% include "./footer.html" %}
+    </div>
+</div>

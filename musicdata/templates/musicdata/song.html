@@ -1,0 +1,34 @@
+{% extends "./base.html" %}
+{% load bootstrap4 %}
+
+    {% block content %}
+        <h1>{{song}}</h1>
+        <table>
+          <tr><th>Key</th><th>Value</th></tr>
+            {% with album=song.album%}
+              <tr><td>Album: </td><td>{{album.album_name}}</td></tr>
+              <tr><td>Release date: </td><td>{{album.release}}</td></tr>
+              <tr><td>Cover URL: </td><td>{{album.cover}}</td></tr>
+              <tr><td>Popularity: </td><td>{{album.popularity}}</td></tr>
+            {% endwith %}
+            {% with spec=song.name%}
+            <tr><td>Name: </td><td>{{spec.song_name}}</td></tr>
+            <tr><td>Duration (ms):</td><td>{{spec.duration}}</td></tr>
+            <tr><td>Danceability:</td><td>{{spec.danceability}}</td></tr>
+            <tr><td>Energy:</td><td>{{spec.energy}}</td></tr>
+            <tr><td>Key:</td><td>{{spec.key}}</td></tr>
+            <tr><td>Loudness:</td><td>{{spec.loudness}}</td></tr>
+            <tr><td>Mode:</td><td>{{spec.mode}}</td></tr>
+            <tr><td>Speechiness:</td><td>{{spec.speechiness}}</td></tr>
+            <tr><td>Acousticness:</td><td>{{spec.acousticness}}</td></tr>
+            <tr><td>Instrumentalness:</td><td>{{spec.instrumentalness}}</td></tr>
+            <tr><td>Liveness:</td><td>{{spec.liveness}}</td></tr>
+            <tr><td>Valence:</td><td>{{spec.valence}}</td></tr>
+            <tr><td>Tempo:</td><td>{{spec.tempo}}</td></tr>
+            <tr><td>Time_signature:</td><td>{{spec.time_signature}}</td></tr>
+            {% endwith %}
+            <tr><td>Popularity: </td><td>{{song.track_popularity}}</td></tr>
+        </table>
+        <a href="/update/{{song.pk}}">UPDATE RECORD</a><br/>
+        <a href="/delete/{{song.pk}}">DELETE RECORD</a>
+    {% endblock %}

@@ -1,0 +1,57 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="The Cure Discography website">
+        <meta name="keywords" content="HTML,The Cure,discography,advanced,web,development">
+        <meta name="author" content="DHP">
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+        <link rel="stylesheet" type="text/css" href="../static/css/musicdata.css">
+        <!-- <script>
+            function exampleFunction() { 
+            var x, y, z;
+            x = 5;
+            y = 6.6;
+            z = "hello";
+            x = x + y * 2;
+            z = z + " world";
+            // alert(x);
+            console.log(z);
+            var test_array = [1,2,3];
+            var test_hash = {"one": 2, "two": 'this'};
+            while(true){
+                console.log("while loop");
+                break;
+            };
+            for (i = 0; i < test_array.length; i++) {
+                console.log("array out: "+test_array[i]);
+            }
+            if(test_array.length === 3)
+            {
+                console.log("array is the right length");
+            } 
+            test_array.forEach(function(element){
+                 console.log("For Each Output: "+element)
+                });
+            }; 
+            // exampleFunction(); 
+            function changePage() {
+                console.log('Changing Page');
+                var h1_elements = document.querySelectorAll("h1");
+                var list_panel = document.getElementById("song_list");
+                console.log(list_panel);
+                list_panel.innerHTML="<h2>oops they're gone</h2>";
+                var nav_links = document.getElementsByClassName("nav_link");
+                for (var i = 0; i < nav_links.length; i++) {
+                    nav_links[i].style.color = "black";
+                } 
+                for(h in h1_elements) {
+                    h1_elements[h].innerHTML = 'Organism Name: D. Bucheria';
+                };
+            };
+
+        </script> -->
+    </head>
+    <body>

@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+{% load bootstrap4 %}
+
+    {% block content %}
+        <h1>Filtered List: {{type.song_name}}</h1>
+        <table>
+            <tr><th>Songs</th></tr>
+            {% for spec in specs %}
+            <tr><td><a href="/song/{{spec.pk}}" >{{spec}}</a></td></tr>
+            {% endfor %}
+        </table>
+    {% endblock %}

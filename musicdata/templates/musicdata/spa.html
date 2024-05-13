@@ -1,0 +1,54 @@
+{% load bootstrap4 %}
+{%load my_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="The Cure Discography website">
+        <meta name="keywords" content="HTML,the cure,discography,advanced,web,development">
+        <meta name="author" content="DHP">
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+        <link rel="stylesheet" type="text/css" href="../static/css/musicdata.css">
+        <script src="/static/js/spa.js"></script>
+    </head>
+    <body onload="initialisePage()">
+        <nav class="navbar navbar-expand-md sticky-top flex-column">
+            <div class="w-100 d-flex">              
+               <div class="navbar-header" id="header">
+                    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Cure_early_logo.jpg" 
+                    alt="dna logo" width="100px" height="100px">
+                    <h1 id="application-title">The Cure Discrography Browser</h1>
+                </div>
+            </div>
+            <div class="w-100 d-flex"> 
+                <ul class="navbar-nav mr-auto" id="navigation">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="javascript:void(0);" onClick="writeInitialContent();">Home <span class="sronly">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4" id="song_list">
+                    <h1>The Cure Songs List</h1>
+                        <div id="song_table">NO TABLE</div>
+                </div>
+                
+                <div class="col-sm-8" class="content">
+                    <div id="dynamic_content">NO CONTENT</div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row"> 
+                  <div class="col-md-12" id="footer">
+                     <hr>
+                     <p>Author: {% my_name %} Date: {% todays_date %} Songs: {% no_songs %}</p>
+                  </div>
+            </div>
+         </div>
+    </body>
+</html>

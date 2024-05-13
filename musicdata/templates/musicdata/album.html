@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h2>Current Album Names</h2>
+<table>
+    <tr><th>Album Name</th></th>
+    {% for album in albums %}
+       <tr><td>{{ album }}</td></tr>
+    {% endfor %}
+</table>
+<br />
+<h2>Add New Album Name</h2>
+<form action="/create_album/" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock%}
